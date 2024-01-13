@@ -5,14 +5,32 @@ import footballQuestions from './questions.js';
 let currentQuestionIndex = 0;
 let timeLeft = 60;
 let timerInterval;
+let quizState = "start";
 
 // Function to start the quiz
 function startQuiz() {
-    document.getElementById('start-screen').classList.add('hide');
-    document.getElementById('questions').classList.remove('hide');
-    updateTimerDisplay();
-    displayQuestion();
-    startTimer();
+    if (quizState === "start") {
+        quizState = "quiz";
+        document.getElementById('start-screen').classList.add('hide');
+        document.getElementById('questions').classList.remove('hide');
+        document.getElementById('timer-feedback').classList.remove('hide'); // Show timer and feedback
+        updateTimerDisplay();
+        displayQuestion();
+        startTimer();
+    } else if (quizState === "end") {
+        quizState = "start";
+        resetQuiz();
+    }
+}
+
+// Function to reset quiz state
+function resetQuiz() {
+    currentQuestionIndex = 0;
+    timeLeft = 60;
+    quizState = "start";
+    document.getElementById('questions').classList.add('hide');
+    document.getElementById('end-screen').classList.add('hide');
+    document.getElementById('start-screen').classList.remove('hide');
 }
 
 // Function to display a question
@@ -73,6 +91,8 @@ function endQuiz() {
             displayHighScores(); // Display updated high scores
         }
     });
+
+    quizState = "end";
 }
 
 // Function to start the timer
@@ -98,7 +118,10 @@ function showFeedback(isCorrect, message) {
     const feedbackElement = document.getElementById('feedback');
     feedbackElement.textContent = message;
     feedbackElement.classList.remove('hide');
-    feedbackElement.classList.add(isCorrect ? 'correct' : 'incorrect');
+    feedbackElement.classList.add
+
+
+        (isCorrect ? 'correct' : 'incorrect');
 
     setTimeout(() => {
         feedbackElement.classList.add('hide');
@@ -108,4 +131,5 @@ function showFeedback(isCorrect, message) {
 
 // Event listener for starting the quiz
 document.getElementById('start').addEventListener('click', startQuiz);
+
 

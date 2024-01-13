@@ -12,11 +12,8 @@
 <body>
     <!-- Navigation to view highscores -->
     <div class="scores"><a href="highscores.html">View Highscores</a></div>
-    <!-- Timer and feedback display -->
-    <div id="timer-feedback" class="hide">
-        <div class="timer">Time: <span id="time">0</span></div>
-        <div id="timer-feedback-feedback" class="feedback hide"></div>
-    </div>
+    <!-- Timer display -->
+    <div class="timer">Time: <span id="time">0</span></div>
     <!-- Main content wrapper -->
     <div class="wrapper">
         <!-- Start screen section -->
@@ -26,8 +23,7 @@
                 Test your knowledge of football with these 10 trivia questions.
                 Incorrect answers will cost you 10 seconds!
             </p>
-            <!-- Update the start button with a data attribute to store the state -->
-            <button id="start" data-state="start">Start Quiz</button>
+            <button id="start">Start Quiz</button>
         </div>
 
         <!-- Questions section (hidden initially) -->

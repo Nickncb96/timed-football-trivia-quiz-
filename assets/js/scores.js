@@ -1,5 +1,3 @@
-// scores.js
-
 // Function to get high scores from local storage
 function getHighScores() {
     const highScoresString = localStorage.getItem('highScores');

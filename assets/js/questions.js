@@ -1,4 +1,3 @@
-// questions.js
 const footballQuestions = [
     {
         question: "Which country won the FIFA World Cup in 2018?",
@@ -27,15 +26,13 @@ const footballQuestions = [
     },
     {
         question: "Which country has won the most Copa America titles?",
-        choices
-
-        : ["Brazil", "Argentina", "Uruguay", "Chile"],
+        choices: ["Brazil", "Argentina", "Uruguay", "Chile"],
         correctAnswer: "Uruguay",
     },
     {
         question: "Who won the Ballon d'Or in 2020?",
         choices: ["Lionel Messi", "Robert Lewandowski", "Cristiano Ronaldo", "Virgil van Dijk"],
-        correctAnswer: "No award (canceled due to COVID-19)",
+        correctAnswer: "Robert Lewandowski",
     },
     {
         question: "Which club has the nickname 'The Red Devils'?",
@@ -44,7 +41,7 @@ const footballQuestions = [
     },
     {
         question: "Who is the manager of the German national football team as of 2022?",
-        choices: ["Joachim Low", "Jurgen Klopp", "Thomas Tuchel", "Pep Guardiola"],
+        choices: ["Joachim Low", "Jurgen Klopp", "Thomas Tuchel", "Pep Guardiola", "Hans-Dieter Flick"],
         correctAnswer: "Hans-Dieter Flick",
     },
     {
@@ -55,4 +52,3 @@ const footballQuestions = [
 ];
 
 export default footballQuestions;
-

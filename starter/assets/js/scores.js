@@ -33,4 +33,8 @@ function clearHighScores() {
     displayHighScores();
 }
 
+// Event listener for clearing high scores
+document.getElementById('clear').addEventListener('click', clearHighScores);
 
+// Event listener to display high scores when the page loads
+document.addEventListener('DOMContentLoaded', displayHighScores);

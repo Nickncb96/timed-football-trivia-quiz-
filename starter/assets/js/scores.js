@@ -1,3 +1,5 @@
+// scores.js
+
 // Function to get high scores from local storage
 function getHighScores() {
     const highScoresString = localStorage.getItem('highScores');
@@ -9,7 +11,7 @@ function saveHighScore(initials, score) {
     const highScores = getHighScores();
     highScores.push({ initials, score });
     localStorage.setItem('highScores', JSON.stringify(highScores));
-    displayHighScores();
+    displayHighScores(); // Display updated high scores
 }
 
 // Function to display high scores on the highscores.html page
@@ -37,4 +39,3 @@ document.getElementById('clear').addEventListener('click', clearHighScores);
 
 // Event listener to display high scores when the page loads
 document.addEventListener('DOMContentLoaded', displayHighScores);
-

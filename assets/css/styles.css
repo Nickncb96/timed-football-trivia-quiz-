@@ -107,3 +107,41 @@ li:nth-child(odd) {
 .incorrect {
   color: #f44336;
 }
+
+
+
+/* Media query for varioius devices
+
+    /* Adjustments for tablets */
+body {
+  font-size: 14px;
+}
+
+
+@media screen and (max-width: 992px) {
+
+  /* Adjustments for laptops */
+  body {
+    font-size: 16px;
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+  /* Adjustments for desktops */
+  body {
+    font-size: 18px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  /* Adjustments for phones */
+  body {
+    font-size: 12px;
+  }
+
+
+}

@@ -1,9 +1,9 @@
-// logic.js
 import footballQuestions from './questions.js';
 
 let currentQuestionIndex = 0;
 let timeLeft = 60;
 let timerInterval;
+let finalScore;
 
 // Function to start the quiz
 function startQuiz() {
@@ -35,10 +35,12 @@ function checkAnswer(answer) {
     const correctAnswer = footballQuestions[currentQuestionIndex].correctAnswer;
 
     if (answer === correctAnswer) {
-        // Correct answer logic (to be added)
+        // Correct answer logic
+        showFeedback(true, "Correct!");
     } else {
         // Incorrect answer logic
         timeLeft -= 10;
+        showFeedback(false, "Wrong!");
     }
 
     currentQuestionIndex++;
@@ -55,7 +57,8 @@ function endQuiz() {
     clearInterval(timerInterval); // Stop the timer
     document.getElementById('questions').classList.add('hide');
     document.getElementById('end-screen').classList.remove('hide');
-    document.getElementById('final-score').textContent = timeLeft;
+    finalScore = timeLeft;
+    document.getElementById('final-score').textContent = finalScore;
 }
 
 // Function to start the timer
@@ -76,8 +79,33 @@ function updateTimerDisplay() {
     document.getElementById('time').textContent = timeLeft;
 }
 
+// Function to show feedback
+function showFeedback(isCorrect, message) {
+    const feedbackElement = document.getElementById('feedback');
+    feedbackElement.textContent = message;
+    feedbackElement.classList.remove('hide');
+    feedbackElement.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+    setTimeout(() => {
+        feedbackElement.classList.add('hide');
+        feedbackElement.classList.remove('correct', 'incorrect');
+    }, 1000);
+}
+
 // Event listener for starting the quiz
 document.getElementById('start').addEventListener('click', startQuiz);
 
+// Event listener for submitting scores
+document.getElementById('submit').addEventListener('click', submitScore);
 
+// Function to submit score
+function submitScore() {
+    const initialsInput = document.getElementById('initials');
+    const initials = initialsInput.value.toUpperCase();
 
+    if (initials && finalScore !== undefined) {
+        saveHighScore(initials, finalScore);
+        initialsInput.disabled = true;
+        document.getElementById('submit').disabled = true;
+    }
+}

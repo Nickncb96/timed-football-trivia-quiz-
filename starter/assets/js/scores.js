@@ -1,4 +1,3 @@
-// scores.js
 // Function to get high scores from local storage
 function getHighScores() {
     const highScoresString = localStorage.getItem('highScores');
@@ -9,8 +8,8 @@ function getHighScores() {
 function saveHighScore(initials, score) {
     const highScores = getHighScores();
     highScores.push({ initials, score });
+    highScores.sort((a, b) => b.score - a.score); // Sort scores in descending order
     localStorage.setItem('highScores', JSON.stringify(highScores));
-    displayHighScores();
 }
 
 // Function to display high scores on the highscores.html page
@@ -36,5 +35,23 @@ function clearHighScores() {
 // Event listener for clearing high scores
 document.getElementById('clear').addEventListener('click', clearHighScores);
 
-// Event listener to display high scores when the page loads
+// Event listener for displaying high scores when the page loads
 document.addEventListener('DOMContentLoaded', displayHighScores);
+
+// other functionality for submitting scores and feedback
+// Function to submit score
+function submitScore() {
+    const initialsInput = document.getElementById('initials');
+    const initials = initialsInput.value.toUpperCase();
+
+    if (initials && finalScore !== undefined) {
+        saveHighScore(initials, finalScore);
+        initialsInput.disabled = true;
+        document.getElementById('submit').disabled = true;
+        displayHighScores(); // Update high scores list
+    }
+}
+
+// Event listener for submitting scores
+document.getElementById('submit').addEventListener('click', submitScore);
+

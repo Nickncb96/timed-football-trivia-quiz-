@@ -1,9 +1,10 @@
+// Importing footballQuestions from questions.js
 import footballQuestions from './questions.js';
 
+// Variables for tracking quiz state
 let currentQuestionIndex = 0;
 let timeLeft = 60;
 let timerInterval;
-let finalScore;
 
 // Function to start the quiz
 function startQuiz() {
@@ -57,8 +58,21 @@ function endQuiz() {
     clearInterval(timerInterval); // Stop the timer
     document.getElementById('questions').classList.add('hide');
     document.getElementById('end-screen').classList.remove('hide');
-    finalScore = timeLeft;
-    document.getElementById('final-score').textContent = finalScore;
+    document.getElementById('final-score').textContent = timeLeft;
+
+    // Prompt user to save initials and score
+    const initialsInput = document.getElementById('initials');
+    const submitButton = document.getElementById('submit');
+
+    submitButton.addEventListener('click', function () {
+        const initials = initialsInput.value.trim();
+
+        if (initials !== "") {
+            saveHighScore(initials, timeLeft);
+            document.getElementById('end-screen').classList.add('hide');
+            displayHighScores(); // Display updated high scores
+        }
+    });
 }
 
 // Function to start the timer
@@ -95,17 +109,3 @@ function showFeedback(isCorrect, message) {
 // Event listener for starting the quiz
 document.getElementById('start').addEventListener('click', startQuiz);
 
-// Event listener for submitting scores
-document.getElementById('submit').addEventListener('click', submitScore);
-
-// Function to submit score
-function submitScore() {
-    const initialsInput = document.getElementById('initials');
-    const initials = initialsInput.value.toUpperCase();
-
-    if (initials && finalScore !== undefined) {
-        saveHighScore(initials, finalScore);
-        initialsInput.disabled = true;
-        document.getElementById('submit').disabled = true;
-    }
-}

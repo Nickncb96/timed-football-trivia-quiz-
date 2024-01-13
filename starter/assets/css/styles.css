@@ -1,73 +1,3 @@
-/* Basic styling for the quiz and highscores pages */
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  background-color: #f2f2f2;
-}
-
-/* Styling for hyperlinks */
-a {
-  color: #0066cc;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-a:hover {
-  color: #004080;
-}
-
-/* Styling for buttons */
-button {
-  display: inline-block;
-  margin: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  background-color: #0066cc;
-  border-radius: 5px;
-  padding: 5px 15px;
-  color: white;
-  border: 0;
-  transition: background-color 0.2s;
-}
-
-button:hover {
-  background-color: #004080;
-}
-
-/* Styling for quiz choices */
-.choices button {
-  display: block;
-  margin: 5px 0;
-}
-
-/* Styling for text input */
-input[type="text"] {
-  font-size: 16px;
-  padding: 5px;
-}
-
-/* Styling for high scores list */
-ol {
-  padding-left: 0;
-  max-height: 400px;
-  overflow: auto;
-}
-
-/* Styling for odd list items (zebra striping) */
-li:nth-child(odd) {
-  background-color: #e6e6e6;
-}
-
-/* Wrapper for content */
-.wrapper {
-  max-width: 600px;
-  margin: 50px auto;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 /* Class to hide elements */
 .hide {
   display: none;
@@ -84,8 +14,8 @@ li:nth-child(odd) {
   font-size: 16px;
   margin-top: 20px;
   padding-top: 10px;
-  color: #999;
-  border-top: 2px solid #ccc;
+  color: #666666;  /* Sophisticated dark gray text color */
+  border-top: 2px solid #cccccc;  /* Light border on top */
 }
 
 /* Styling for timer display */
@@ -97,3 +27,12 @@ li:nth-child(odd) {
   font-weight: bold;
 }
 
+/* Styling for correct feedback */
+.correct {
+  color: #4caf50;  /* Sophisticated green text color for correct feedback */
+}
+
+/* Styling for incorrect feedback */
+.incorrect {
+  color: #f44336;  /* Sophisticated red text color for incorrect feedback */
+}

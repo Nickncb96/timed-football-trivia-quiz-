@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Highscores</title>
 
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Highscores</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
 
-  <body>
-    <div class="wrapper">
-      <h1>Highscores</h1>
-      <ol id="highscores"></ol>
+<body>
+  <!-- Main content wrapper -->
+  <div class="wrapper">
+    <h1>Highscores</h1>
+    <!-- List to display high scores -->
+    <ol id="highscores"></ol>
+    <!-- Navigation to go back to the main quiz page -->
+    <a href="index.html"><button>Go Back</button></a>
+    <!-- Button to clear high scores -->
+    <button id="clear">Clear Highscores</button>
+  </div>
 
-      <a href="index.html"><button>Go Back</button></a>
-      <button id="clear">Clear Highscores</button>
-    </div>
+  <!-- JavaScript file for handling high scores -->
+  <script src="./assets/js/scores.js" type="module"></script>
+</body>
 
-    <script src="./assets/js/scores.js"></script>
-  </body>
 </html>

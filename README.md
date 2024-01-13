@@ -46,7 +46,7 @@ The application is built using HTML, JavaScript and CSS.
 
 ~ Deployment:
 
- - The application is deployed and accessible at: 
+ - The application is deployed and accessible at: https://nickncb96.github.io/timed-football-trivia-quiz-/
 
 ~ Application Quality
  - Intuitive and easy-to-navigate user experience.
@@ -57,7 +57,7 @@ The application is built using HTML, JavaScript and CSS.
 
 
 
-- The URL of the deployed application: 
+- The URL of the deployed application: https://nickncb96.github.io/timed-football-trivia-quiz-/
 - The URL of the GitHub repository: https://github.com/Nickncb96/timed-football-trivia-quiz-.git
 
 

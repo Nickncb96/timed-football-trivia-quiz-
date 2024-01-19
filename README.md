@@ -61,8 +61,8 @@ The application is built using HTML, JavaScript and CSS.
 - The URL of the GitHub repository: https://github.com/Nickncb96/timed-football-trivia-quiz-.git
 
 
-
-
+                         
+![Alt text](Screenshot.jpg)
 
 
 
